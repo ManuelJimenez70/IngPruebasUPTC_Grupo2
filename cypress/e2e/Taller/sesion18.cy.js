@@ -37,9 +37,15 @@ describe('Inicio de sesion', () => {
 })
 
 
-describe('Registro', () => {
+describe('Cambio de contraseña', () => {
     beforeEach(() => {
         cy.visit('https://petstore.octoperf.com/actions/Catalog.action')
+        cy.get('a').contains('Sign In').click("center")
+        cy.get("[name = 'username']").type("11111");
+        cy.get("[name = 'password']").clear().type("prueba123*");
+        cy.get("[name = 'signon']").click("center")
+        cy.get('a').contains('My Account').click("center")
+
     })
 
     afterEach(() => {
@@ -47,6 +53,13 @@ describe('Registro', () => {
             win.close();
         });
     });
+
+
+
+})
+
+
+describe('Registro', () => {
 
     it('Registro correcto', () => {
         cy.get('a').contains('Sign In').click("center")
@@ -67,6 +80,4 @@ describe('Registro', () => {
 
 
     })
-
-
 })
