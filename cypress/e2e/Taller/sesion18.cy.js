@@ -35,3 +35,38 @@ describe('Inicio de sesion', () => {
     })
 
 })
+
+
+describe('Registro', () => {
+    beforeEach(() => {
+        cy.visit('https://petstore.octoperf.com/actions/Catalog.action')
+    })
+
+    afterEach(() => {
+        cy.window().then((win) => {
+            win.close();
+        });
+    });
+
+    it('Registro correcto', () => {
+        cy.get('a').contains('Sign In').click("center")
+        cy.get('a').contains('Register Now!').click("center")
+
+        cy.get("[name = 'username']").type("00005");
+        cy.get("[name = 'password']").clear().type("12345678");
+        cy.get("[name = 'repeatedPassword']").clear().type("12345678");
+        cy.get("[name='account.firstName']").type("Nombre prueba");
+        cy.get("[name = 'account.lastName']").clear().type("Apellido Prueba");
+        cy.get("[name='account.email']").type("prueba@prueba.com");
+        cy.get("[name = 'account.phone']").clear().type("1234567890");
+
+        cy.get("[name = 'account.address1']").clear().type("calle 1 # 2-3");
+        cy.get("[name = 'account.address2']").clear().type("calle 4 # 5-6");
+
+        cy.get("[name = 'account.city']").clear().type("Tunja");
+
+
+    })
+
+
+})
