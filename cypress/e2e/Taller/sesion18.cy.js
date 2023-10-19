@@ -1,10 +1,16 @@
-describe('Escenario de Prueba', () => {
-
+describe('Registro de sesion', () => {
     beforeEach(() => {
-        cy.visit('http://zero.webappsecurity.com/')
+      cy.visit('https://petstore.octoperf.com/actions/Catalog.action')
+    })
+  
+    afterEach(() => {
+      cy.window().then((win) => {
+        win.close();
+      });
+    });
+
+    it('Registro de sesion correctamente', () => {
+       cy.click("")
     })
 
-    it('Caso de Prueba 1', () => {
-       
-    })
   })
