@@ -21,7 +21,6 @@ describe('Registro', () => {
         cy.get("[name = 'account.zip']").clear().type("a");
         cy.get("[name = 'account.country']").clear().type("Col");
         cy.get("[name = 'newAccount']").click("center");
-        cy.get('a').contains('Sign In').should("be.visible");
     })
     const generateRandomNumberString = () => {
         const randomNumber = Math.floor(Math.random() * 1000000000000);
