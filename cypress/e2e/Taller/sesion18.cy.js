@@ -62,6 +62,7 @@ describe('Cambio de contraseña', () => {
 describe('Registro', () => {
 
     it('Registro correcto', () => {
+        cy.visit('https://petstore.octoperf.com/actions/Catalog.action')
         cy.get('a').contains('Sign In').click("center")
         cy.get('a').contains('Register Now!').click("center")
 
